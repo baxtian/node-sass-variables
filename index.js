@@ -104,11 +104,11 @@ function toJSON(value) {
         return {
             type: 'SassColor'
             , value: {
-                r: value.red
-                , g: value.green
-                , b: value.blue
+                r: value.channel("red")
+                , g: value.channel("green")
+                , b: value.channel("blue")
                 , a: value.alpha
-                , hex: color.rgb(value.red, value.green, value.blue).hex().toLowerCase()
+                , hex: color.rgb(value.channel("red"), value.channel("green"), value.channel("blue")).hex().toLowerCase()
             }
         };
     }
